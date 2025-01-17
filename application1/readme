@@ -1,0 +1,40 @@
+# Google Sheets Clone
+
+## Overview
+
+This project is a web application that mimics the user interface and core functionalities of Google Sheets. It allows users to enter data, perform mathematical calculations, and apply data quality functions similar to those found in Google Sheets.
+
+## Features
+
+- **Spreadsheet Interface**: A grid layout that allows users to enter and edit data in cells.
+- **Mathematical Functions**: Implemented functions include SUM, AVERAGE, MAX, MIN, and COUNT.
+- **Data Quality Functions**: Functions such as TRIM, UPPER, LOWER, REMOVE_DUPLICATES, and FIND_AND_REPLACE.
+- **Data Entry and Validation**: Users can input various data types with basic validation checks.
+- **Dynamic Updates**: Changes in cell values automatically update dependent calculations.
+
+## Technologies Used
+
+- **Flask**: A lightweight WSGI web application framework for Python.
+- **HTML/CSS**: For structuring and styling the web application.
+- **JavaScript**: For client-side interactivity and AJAX requests.
+- **Jinja2**: Templating engine used by Flask to render HTML.
+
+
+
+## Installation
+
+1. **Clone the Repository**:
+
+     git clone <url link>
+     cd google_sheets_clone
+
+2.  **installation**
+
+     pip install Flask
+     pip install requirements.txt
+
+3. **run**
+
+      python app.py
+      and u can use this link:
+      http://127.0.0.1:5000/
