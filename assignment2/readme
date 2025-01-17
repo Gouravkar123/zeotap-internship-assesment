@@ -1,0 +1,37 @@
+# CDP Support Agent Chatbot
+
+This project is a support agent chatbot built using Flask that answers "how-to" questions related to four Customer Data Platforms (CDPs): Segment, mParticle, Lytics, and Zeotap. The chatbot retrieves relevant information from indexed documentation to assist users.
+
+## Features
+
+- Answer "how-to" questions related to Segment, mParticle, Lytics, and Zeotap.
+- Simple web interface for user interaction.
+- Uses Whoosh for indexing and searching documentation.
+- Handles user input and displays responses dynamically.
+
+## Technologies Used
+
+- Python
+- Flask
+- Whoosh (for indexing and searching)
+- HTML/CSS/JavaScript (for the frontend)
+
+
+## Installation
+
+1. **Clone the repository**:
+
+     git clone <url link>
+     cd cdp_chatbot
+
+2. **Create a virtual environment**:
+
+     python -m venv venv
+     venv\Scripts\activate
+     pip install -r requirements.txt
+
+3. **run**:
+
+     python app.py
+     or click this url:
+     http://127.0.0.1:5000/

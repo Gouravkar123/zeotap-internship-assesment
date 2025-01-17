@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDP Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>CDP Support Agent Chatbot</h1>
+        <div id="chatbox">
+            <div id="messages"></div>
+        </div>
+        <input type="text" id="user-input" placeholder="Ask a how-to question...">
+        <button id="send-button">Send</button>
+    </div>
+
+    <script>
+        document.getElementById('send-button').onclick = function() {
+            const userInput = document.getElementById('user-input').value;
+            if (userInput) {
+                const messageDiv = document.createElement('div');
+                messageDiv.textContent = "You: " + userInput;
+                document.getElementById('messages').appendChild(messageDiv);
+                document.getElementById('user-input').value = '';
+
+                fetch('/ask', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ question: userInput })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(item => {
+                        const responseDiv = document.createElement('div');
+                        responseDiv.innerHTML = `<strong>${item.title}:</strong> ${item.content}`;
+                        document.getElementById('messages').appendChild(responseDiv);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+        };
+    </script>
+</body>
+</html>
